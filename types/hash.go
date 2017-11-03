@@ -22,21 +22,22 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
+// Hashes represents a list of hashes
 type Hashes struct {
 	hashes []Hash
 }
 
 // Hash is a representation of a single hash stored in the databse.
 type Hash struct {
-	ID           bson.ObjectId            `bson:"_id,omitempty" json:"id,omitempty" description:"Internally used ID for the hash"`
-	Hash         string                   `bson:"hash" json:"hash" description:"The hash string itself"`
-	Files   []struct{
+	ID    bson.ObjectId `bson:"_id,omitempty" json:"id,omitempty" description:"Internally used ID for the hash"`
+	Hash  string        `bson:"hash" json:"hash" description:"The hash string itself"`
+	Files []struct {
 		Name string `json:"name"`
 		Hash string `json:"hash"`
-	}   `bson:"files" json:"files" description:"File hashes for the artifact"`
-	Name         string                   `bson:"name" json:"name" description:"Name of the artifact"`
-	Cves         CVEs                     `bson:"cves" json:"cves,omitempty" description:"All known related CVEs"`
-	Submitter    string                   `bson:"submitter" json:"submitter,omitempty" description:"User who submitted the hash"`
+	} `bson:"files" json:"files" description:"File hashes for the artifact"`
+	Name      string `bson:"name" json:"name" description:"Name of the artifact"`
+	Cves      CVEs   `bson:"cves" json:"cves,omitempty" description:"All known related CVEs"`
+	Submitter string `bson:"submitter" json:"submitter,omitempty" description:"User who submitted the hash"`
 }
 
 // SingleHashRequest represents a single hash request via HTTP
