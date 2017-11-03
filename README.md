@@ -1,4 +1,5 @@
 # Victims-Common
+[![Build Status](https://travis-ci.org/victims/victims-common.svg)](https://travis-ci.org/victims/victims-common/)
 
 Common libraries for Victims-API and Victims-Upload
 
