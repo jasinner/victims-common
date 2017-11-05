@@ -31,10 +31,10 @@ func (c *CVEs) Append(cves []CVE) {
 	}
 }
 
+// AppendSingle appends a single CVE to the instance
 func (c *CVEs) AppendSingle(cve string) {
 	*c = append(*c, CVE(cve))
 }
-
 
 // Size returns the size of the internal list
 func (c *CVEs) Size() int {

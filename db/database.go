@@ -34,6 +34,7 @@ var session *mgo.Session
 // db is the package internal database connection
 var db *mgo.Database
 
+// New creates a new connection to the database
 func New(mongoURI, mongoDB string) (*mgo.Database, error) {
 	log.Logger.Infof("Creating new session %s/%s: ", mongoURI, mongoDB)
 	ses, err := mgo.DialWithTimeout(mongoURI, 3*time.Second)
@@ -55,7 +56,7 @@ func New(mongoURI, mongoDB string) (*mgo.Database, error) {
 func GetDB() (*mgo.Database, error) {
 	if db == nil {
 		return nil, errors.New(
-			"Database not initialized. New() must be called once.")
+			"database not initialized - New() must be called once")
 	}
 	return db, nil
 }

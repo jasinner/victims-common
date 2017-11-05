@@ -20,6 +20,7 @@ package log
 
 import "github.com/Sirupsen/logrus"
 
+// Logger is the exported single log instance
 var Logger *logrus.Logger
 
 // init executes upon import creating a default logger
