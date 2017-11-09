@@ -1,5 +1,5 @@
 /*
-* victi.ms API microservice
+* victi.ms common library
 * Copyright (C) 2017 The victi.ms team
 *
 * This program is free software: you can redistribute it and/or modify
